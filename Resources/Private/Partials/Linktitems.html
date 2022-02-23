@@ -1,0 +1,108 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://typo3.org/ns/TYPO3/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true"
+>
+
+<f:comment><!--<![CDATA[
+    This template is meant as an example for how to use/render the linkitems.
+    Feel free to copy this and adapt it to your needs.
+]]>--></f:comment>
+
+<f:section name="Main">
+    <f:if condition="{linkItems}">
+        <f:variable name="align" value="{f:if(condition:linkitemAlign, then:linkitemAlign, else:data.linkitem_align)}"/>
+        <f:variable name="layout"
+                    value="{f:if(condition:linkitemLayout, then:linkitemLayout, else:data.linkitem_layout)}"/>
+        <f:variable name="class" value="{f:if(condition:data.CType, then: '{data.CType}_linkitems ')}"/>
+
+        <div class="{class}linkitems{f:if(condition:align, then: ' linkitems-{align}')} {additional}">
+            <f:switch expression="{layout}">
+                <f:case value="list">
+                    <ul class="linkitems_list">
+                        <f:render section="LinkItems"
+                                  arguments="{linkItems:linkItems, linkItemWrap: 1, invert:invert, debug:debug, additionalLinkClass: additionalLinkClass}"/>
+                    </ul>
+                </f:case>
+                <f:defaultCase>
+                    <f:render section="LinkItems"
+                              arguments="{linkItems:linkItems, invert:invert, debug:debug, additionalLinkClass: additionalLinkClass}"/>
+                </f:defaultCase>
+            </f:switch>
+        </div>
+    </f:if>
+</f:section>
+
+<f:section name="LinkItems">
+    <f:for each="{linkItems}" as="linkItem">
+        <f:variable name="link" value="{f:if(condition:linkItem.link, then:linkItem.link, else:linkItem.data.link)}"/>
+        <f:variable name="text" value="{f:if(condition:linkItem.text, then:linkItem.text, else:linkItem.data.text)}"/>
+        <f:variable name="style"
+                    value="{f:if(condition:linkItem.style, then:linkItem.style, else:linkItem.data.style)}"/>
+        <f:if condition="{invert}">
+            <f:variable name="style" value="{style} {style}-white"/>
+        </f:if>
+
+        <f:variable name="icon"
+                    value="{f:if(condition: '{linkItem.icon} == \'custom_icon\' || {linkItem.data.icon} == \'custom_icon\'',then:'{f:if(condition:linkItem.custom_icon, then:linkItem.custom_icon, else:linkItem.data.custom_icon)}', else:'{f:if(condition:linkItem.icon, then:linkItem.icon, else:linkItem.data.icon)}')}"/>
+        <f:variable name="position"
+                    value="{f:if(condition:linkItem.position, then:linkItem.position, else:'{f:if(condition: linkItem.icon_position, then:linkItem.icon_position, else:linkItem.data.icon_position)}')}"/>
+        <f:variable name="trigger"
+                    value="{f:if(condition:linkItem.trigger, then:linkItem.trigger, else:'{f:if(condition: linkItem.lightbox_trigger, then: linkItem.lightbox_trigger, else: linkItem.data.lightbox_trigger)}')}"/>
+        <f:variable name="prefetch" value="{linkItem.data.prefetch}"/>
+
+        <f:if condition="{linkItemWrap}">
+            <f:then>
+                <li class="linkitems_list_item">
+                    <f:render section="LinkItem"
+                              arguments="{link:link, text:text, style:'{style} {additionalLinkClass}', icon:icon, position:position, trigger:trigger, prefetch: prefetch}"/>
+                </li>
+            </f:then>
+            <f:else>
+                <f:render section="LinkItem"
+                          arguments="{link:link, text:text, style:'{style} {additionalLinkClass}', icon:icon, position:position, trigger:trigger, prefetch: prefetch}"/>
+            </f:else>
+        </f:if>
+    </f:for>
+</f:section>
+
+<f:section name="LinkItem">
+    <f:if condition="{trigger}">
+        <f:then>
+            <button class="{style} lightbox-trigger" data-for="page_lightbox">
+                <f:if condition="{icon} && {position} == 'left'">
+                    <i class="icon {icon}"></i>
+                </f:if>
+                <span class="text">{f:if(condition:text, then:text, else: '{f:link.typolink(parameter:link) -> f:format.stripTags()}')}</span>
+                <f:if condition="{icon} && {position} == 'right'">
+                    <i class="icon {icon}"></i>
+                </f:if>
+            </button>
+        </f:then>
+        <f:else>
+            <f:if condition="{f:uri.typolink(parameter:link)}">
+                <f:switch expression="{style}">
+                    <f:case value="scroller">
+                        <f:render section="Scroller" arguments="{_all}"/>
+                    </f:case>
+                    <f:defaultCase>
+                        <f:link.typolink class="{style}"
+                                         parameter="{link}"
+                                         additionalAttributes="{'data-controller' : '{f:if(condition: \'{prefetch}\', then:\'prefetch\')}'}">
+                            <f:if condition="{icon} && {position} == 'left'">
+                                <i class="icon {icon}"></i>
+                            </f:if>
+                            <span class="text">
+                                {f:if(condition:text, then:text, else: '{f:link.typolink(parameter:link) -> f:format.stripTags()}')}
+                            </span>
+                            <f:if condition="{icon} && {position} == 'right'">
+                                <i class="icon {icon}"></i>
+                            </f:if>
+                        </f:link.typolink>
+                    </f:defaultCase>
+                </f:switch>
+            </f:if>
+        </f:else>
+    </f:if>
+</f:section>
+
+</html>

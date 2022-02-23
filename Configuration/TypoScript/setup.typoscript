@@ -1,0 +1,17 @@
+linkitemProcessing = TYPO3\CMS\Frontend\DataProcessing\DatabaseQueryProcessor
+linkitemProcessing {
+  table = tx_linkitems_domain_model_linkitem
+  where {
+    data = field:uid
+    intval = 1
+    wrap = tablename="tt_content" AND fieldname="linkitems" AND uid_foreign=|
+  }
+  orderBy = sorting
+  as = linkItems
+}
+
+lib.contentElement {
+  dataProcessing {
+    200 < linkitemProcessing
+  }
+}

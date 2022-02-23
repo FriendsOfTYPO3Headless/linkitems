@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.0" xmlns:t3="http://typo3.org/schemas/xliff">
+	<file source-language="en" datatype="plaintext" original="messages" date="1990-01-01T00:00:00Z" product-name="linkitems">
+		<header/>
+		<body>
+		    <trans-unit id="tt_content.linkitem_align">
+                <source>Alignment</source>
+            </trans-unit>
+		    <trans-unit id="tt_content.linkitem_align.left">
+                <source>Left</source>
+            </trans-unit>
+		    <trans-unit id="tt_content.linkitem_align.center">
+                <source>Center</source>
+            </trans-unit>
+		    <trans-unit id="tt_content.linkitem_align.right">
+                <source>Right</source>
+            </trans-unit>
+
+            <trans-unit id="tt_content.linkitem_layout">
+                <source>Layout</source>
+            </trans-unit>
+            <trans-unit id="tt_content.linkitem_layout.none">
+                <source>None</source>
+            </trans-unit>
+            <trans-unit id="tt_content.linkitem_layout.list">
+                <source>List</source>
+            </trans-unit>
+
+            <trans-unit id="palette.linkitem_settings.label">
+                <source>Links</source>
+            </trans-unit>
+            <trans-unit id="tab.linkitem_settings.label">
+                <source>Linkitems</source>
+            </trans-unit>
+
+            <trans-unit id="tx_linkitems_domain_model_linkitem">
+				<source>Linkitem</source>
+			</trans-unit>
+			<trans-unit id="tx_linkitems_domain_model_linkitem.description">
+				<source>Attach buttons and/or links to this content element</source>
+			</trans-unit>
+			<trans-unit id="linkitem_layout.label">
+				<source>Link- / Button-Layout</source>
+			</trans-unit>
+			<trans-unit id="linkitem_layout.list">
+				<source>list</source>
+			</trans-unit>
+			<trans-unit id="linkitem_align.label">
+				<source>Alignment</source>
+			</trans-unit>
+			<trans-unit id="tx_linkitems_domain_model_linkitem.link">
+				<source>Link</source>
+			</trans-unit>
+			<trans-unit id="tx_linkitems_domain_model_linkitem.text">
+				<source>Linktext (optional)</source>
+			</trans-unit>
+			<trans-unit id="tx_linkitems_domain_model_linkitem.style">
+				<source>Style</source>
+			</trans-unit>
+
+			<trans-unit id="tx_linkitems_domain_model_linkitem.style.btn_primary">
+			    <source>Primary</source>
+			</trans-unit>
+            <trans-unit id="tx_linkitems_domain_model_linkitem.style.btn_secondary">
+                <source>Secondary</source>
+            </trans-unit>
+            <trans-unit id="tx_linkitems_domain_model_linkitem.style.btn_success">
+                <source>Success</source>
+            </trans-unit>
+            <trans-unit id="tx_linkitems_domain_model_linkitem.style.btn_danger">
+                <source>Danger</source>
+            </trans-unit>
+            <trans-unit id="tx_linkitems_domain_model_linkitem.style.btn_warning">
+                <source>Warning</source>
+            </trans-unit>
+            <trans-unit id="tx_linkitems_domain_model_linkitem.style.btn_info">
+                <source>Info</source>
+            </trans-unit>
+            <trans-unit id="tx_linkitems_domain_model_linkitem.style.btn_light">
+                <source>Light</source>
+            </trans-unit>
+            <trans-unit id="tx_linkitems_domain_model_linkitem.style.btn_dark">
+                <source>Dark</source>
+            </trans-unit>
+            <trans-unit id="tx_linkitems_domain_model_linkitem.style.btn_link">
+                <source>Link</source>
+            </trans-unit>
+
+            <trans-unit id="tx_linkitems_domain_model_linkitem.icon">
+                <source>Icon</source>
+            </trans-unit>
+            <trans-unit id="tx_linkitems_domain_model_linkitem.icon">
+                <source>Icon</source>
+            </trans-unit>
+
+            <trans-unit id="tx_linkitems_domain_model_linkitem.icon.custom">
+                <source>Custom</source>
+            </trans-unit>
+            <trans-unit id="tx_linkitems_domain_model_linkitem.icon.arrow-left">
+                <source>Arrow Left</source>
+            </trans-unit>
+            <trans-unit id="tx_linkitems_domain_model_linkitem.icon.arrow-right">
+                <source>Arrow Right</source>
+            </trans-unit>
+            <trans-unit id="tx_linkitems_domain_model_linkitem.icon.arrow-up">
+                <source>Arrow Up</source>
+            </trans-unit>
+            <trans-unit id="tx_linkitems_domain_model_linkitem.icon.arrow-down">
+                <source>Arrow Down</source>
+            </trans-unit>
+            <trans-unit id="tx_linkitems_domain_model_linkitem.icon.envelope">
+                <source>Envelope</source>
+            </trans-unit>
+            <trans-unit id="tx_linkitems_domain_model_linkitem.icon.angle-double-down">
+                <source>Angle Double Down</source>
+            </trans-unit>
+            <trans-unit id="tx_linkitems_domain_model_linkitem.icon.external-alt-link">
+                <source>External</source>
+            </trans-unit>
+            <trans-unit id="tx_linkitems_domain_model_linkitem.icon.download">
+                <source>Download</source>
+            </trans-unit>
+            <trans-unit id="tx_linkitems_domain_model_linkitem.icon.phone">
+                <source>Phone</source>
+            </trans-unit>
+            <trans-unit id="tx_linkitems_domain_model_linkitem.icon.plane">
+                <source>Plane</source>
+            </trans-unit>
+
+            <trans-unit id="tx_linkitems_domain_model_linkitem.customIcon">
+                <source>Custom Icon</source>
+            </trans-unit>
+            <trans-unit id="tx_linkitems_domain_model_linkitem.customIcon">
+                <source>Custom CSS class(es) of the desired icon</source>
+            </trans-unit>
+            <trans-unit id="tx_linkitems_domain_model_linkitem.icon_position">
+                <source>Icon position</source>
+            </trans-unit>
+            <trans-unit id="tx_linkitems_domain_model_linkitem.icon_position.left">
+                <source>Left</source>
+            </trans-unit>
+            <trans-unit id="tx_linkitems_domain_model_linkitem.icon_position.right">
+                <source>Right</source>
+            </trans-unit>
+            <trans-unit id="tx_linkitems_domain_model_linkitem.icon_position.above">
+                <source>Above</source>
+            </trans-unit>
+            <trans-unit id="tx_linkitems_domain_model_linkitem.icon_position.below">
+                <source>Below</source>
+            </trans-unit>
+		</body>
+	</file>
+</xliff>
